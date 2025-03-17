@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { update_data } from "../controller/controller.js";
+import { update_data, get_data, get_data_country } from "../controller/controller.js";
 
 const router = Router();
 
@@ -15,7 +15,7 @@ router.post("/register", (req, res) => {
     res.json({message: "Register" });
 });
 
-router.post("/get_data", (req, res) => {
+router.post("/get_data", get_data, (req, res) => {
     res.json({message: "Get Data" });
 });
 
@@ -23,7 +23,7 @@ router.post("/update_data", update_data, (req, res) => {
     res.json({message: "Update Data" });
 });
 
-router.get("/get_data_country", (req, res) => {
+router.get("/get_data_country", get_data_country, (req, res) => {
     res.json({message: "Get Data Country" });
 });
 

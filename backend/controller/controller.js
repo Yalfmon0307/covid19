@@ -25,3 +25,18 @@ export const update_data = async (req, res) => {
     res.json({message: "Data updated" });
 };
 
+export const get_data = async (req, res) => {
+    const response = await pool.query("SELECT * FROM covid_data");
+    res.json(response.rows);
+};
+
+export const get_data_country = async (req, res) => {
+    const { country } = req.body;
+    const response = await pool.query("SELECT * FROM covid_data WHERE country = $1", [country]);
+    if (response.rows.length === 0) {
+        res.json({message: "Country not found" });
+    } else {
+        res.json(response.rows);
+    }
+};
+
