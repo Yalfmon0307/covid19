@@ -1,4 +1,5 @@
 import { Router } from "express";
+import { update_data } from "../controller/controller.js";
 
 const router = Router();
 
@@ -18,7 +19,7 @@ router.post("/get_data", (req, res) => {
     res.json({message: "Get Data" });
 });
 
-router.post("/update_data", (req, res) => {
+router.post("/update_data", update_data, (req, res) => {
     res.json({message: "Update Data" });
 });
 
