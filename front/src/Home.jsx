@@ -146,10 +146,10 @@ const Home = () => {
                     {data.map((country, index) => (
                         <tr key={index}>
                             <td>{country.country}</td>
-                            <td>{country.population !== null ? country.deaths : 'N/A'}</td>
-                            <td>{country.cases !== null ? country.deaths : 'N/A'}</td>
+                            <td>{country.population !== null ? country.population : 'N/A'}</td>
+                            <td>{country.cases !== null ? country.cases : 'N/A'}</td>
                             <td>{country.deaths !== null ? country.deaths : 'N/A'}</td>
-                            <td>{country.recovered !== null ? country.deaths : 'N/A'}</td>
+                            <td>{country.recovered !== null ? country.recovered : 'N/A'}</td>
                             <td><button onClick={(e) => handleClickEliminar(country.country)}>X</button></td>
                         </tr>
                     ))}
