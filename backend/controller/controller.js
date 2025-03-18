@@ -34,9 +34,15 @@ export const get_data_country = async (req, res) => {
     const { country } = req.body;
     const response = await pool.query("SELECT * FROM covid_data WHERE country = $1", [country]);
     if (response.rows.length === 0) {
-        res.json({message: "Country not found" });
+        res.status(404).json({message: "Country not found" });
     } else {
         res.json(response.rows);
     }
+};
+
+export const delete_data = async (req, res) => {
+    const { country } = req.body;
+    const response = await pool.query("DELETE FROM covid_data WHERE country = $1", [country]);
+    res.json({message: "Data deleted" });
 };
 
