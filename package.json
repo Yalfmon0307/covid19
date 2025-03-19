@@ -6,8 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "db": "node backend/db.js",
-    "install": "concurrently \" npm install\" \"cd front && npm install\" ",
-    "start": "concurrently \"node backend/app.js\" \"cd front && npm run dev\" "
+    "install-dependencies": "npm install && npm install --prefix front",
+    "start": "npm i concurrently && concurrently \"node backend/app.js\" \"npm run dev --prefix front\""
   },
   "repository": {
     "type": "git",
