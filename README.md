@@ -18,6 +18,8 @@ Una ves descargador el repo.
 - DB_HOST = localhost
 - DB_PORT = 5432
 
-3- npm run db
+3- npm run install-dependencies
 
-4- npm run start
+4- npm run db
+
+5- npm run start
