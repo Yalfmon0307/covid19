@@ -16,4 +16,10 @@ if (query) {
     console.log("Connected to database");
 }
 
+
+    const querydb = await pool.query("CREATE TABLE IF NOT EXISTS covid_data (country character varying(36) NOT NULL primary key, population integer, cases integer, deaths integer, recovered integer)");
+
+    if (querydb) {
+        console.log("Table created");
+    }
 export default pool;

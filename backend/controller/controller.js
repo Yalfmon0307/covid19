@@ -6,7 +6,11 @@ export const update_data = async (req, res) => {
     
     const response = data.response;
 
-    const delete_data = await pool.query("truncate table covid_data");
+    const delete_data = await pool.query("DROP table covid_data");
+
+    const create_table = await pool.query("CREATE TABLE covid_data (country character varying(36) NOT NULL primary key, population integer, cases integer, deaths integer, recovered integer)")
+
+
 
     const records = response.map((record) => {
         const dato = {
