@@ -19,4 +19,5 @@ Una ves descargador el repo.
 - DB_PORT = 5432
 
 3- npm run db
+
 4- npm run start
